@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Open First Link",
-  "version": "0.1",
+  "version": "0.11",
   "background": {
     "scripts": ["background.js"]
   },
@@ -10,7 +10,7 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["jquery-3.3.1.min.js", "content.js"],
+      "js": ["jquery-3.3.1.min.js", "walk.js"],
       "run_at": "document_end"
     }
   ],
@@ -18,3 +18,6 @@
     "default_icon": "icon.png"
   }
 }
+
+
+// Check this https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-word-boundary
