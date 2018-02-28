@@ -34,24 +34,41 @@ function handleText(textNode)
 {
 	var v = textNode.nodeValue;
 
-  //var pattern = /\bTrump\b/g
-    //var pattern = /[$]/g
-    //var pattern = /^$/g
-		  //var pattern = /\$[\s\S]*$/g  - This works
-			//var pattern = /\$[\d\D]?$/g
-			//var pattern = /\$([^]+).*$/g - This works V2
-			//var pattern = /\$.*$/ - This works V3
-			  //var pattern = /\$[\w]*/g - This works 2.0
+				//Select any object that starts with $
 				var pattern = /\$[\w\.]*/g
+
+				var pattern_number
+				var pattern_new
+				var number_raw
+				var number_hour
+				var hourly = 40
+
+				while (pattern_number = pattern.exec(v)) {
+					console.log(pattern_number[0])
+
+					pattern_new = pattern_number[0].toString().substring(1)
+					console.log(pattern_new)
+
+					number_raw = parseFloat(pattern_new)
+					console.log(number_raw)
+
+					number_hour = number_raw/hourly
+					console.log(number_hour)
+				}
+
+
+
+				//var hour = parseFloat(pattern)
+
+				//var wage = 40
+
+				//var hourly = hour/wage
+
+				//var cost = num.toString(hourly)
 
 				// Have the $ amounts selected. Now need to convert 'pattern' into a number to divide by hourly salary
 
-				var hour = Number(pattern.replace(/[^0-9\.-]+/g,""))
-
-	//v = v.replace(pattern, "1000000000000");
-	 v = v.replace(pattern, hour);
-
-	//v = v.replace(/\bspaghetti\b/g, "caaaaarbs");
+				v = v.replace(pattern, number_hour);
 
 	textNode.nodeValue = v;
 }
