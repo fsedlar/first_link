@@ -8,7 +8,7 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://*.amazon.com/*"
       ],
       "js": ["jquery-3.3.1.min.js", "walk.js"],
       "run_at": "document_end"
@@ -22,7 +22,7 @@
 
 // Check this https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#special-word-boundary
 
-// Set to work only on Amazon
-// Round the final number displayed
-// Run once the page is loaded
-// Add 'hours' to the replace argument
+// Set to work only on Amazon - done
+// Round the final number displayed - done
+// Run once the page is loaded - done, though could change to the default behavior of document.idel
+// Add 'hours' to the replace argument - done

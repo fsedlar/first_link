@@ -52,7 +52,7 @@ function handleText(textNode)
 					number_raw = parseFloat(pattern_new)
 					console.log(number_raw)
 
-					number_hour = number_raw/hourly
+					number_hour = (number_raw/hourly).toFixed(1)
 					console.log(number_hour)
 				}
 
@@ -68,7 +68,9 @@ function handleText(textNode)
 
 				// Have the $ amounts selected. Now need to convert 'pattern' into a number to divide by hourly salary
 
-				v = v.replace(pattern, number_hour);
+				v = v.replace(pattern, number_hour+" Hours");
+				//v = v.replace(pattern, "TALLEN");
+
 
 	textNode.nodeValue = v;
 }
